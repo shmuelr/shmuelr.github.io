@@ -2,12 +2,12 @@
 title:       Shmuel Rosansky
 email:       orbitdesignco@gmail.com
 author:      Shmuel Rosansky
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+description: "Tech musings and random streams of consciousness"
 baseurl:     ""
 url:         "http://shmuelrosansky.com"
 
 # Google analytics
-google_analytics:
+google_analytics: UA-65249816-1
 
 # Optional features
 animated:           false
@@ -24,7 +24,7 @@ github_username: shmuelr
 stackoverflow_id: 1764080
 twitter_username:
 google_plus_id: 113411818492269662250
-linkedin_username: 299198468
+linkedin_username: shmuelr
 angellist_username:
 bitcoin_url:
 paypal_url:
