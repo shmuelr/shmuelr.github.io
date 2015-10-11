@@ -26,6 +26,9 @@ On Windows you can install [this codec](https://developers.google.com/speed/webp
 
 #### Let's do it!
 
+First you need to download the compiled binaries from [here](https://developers.google.com/speed/webp/docs/precompiled).
+To convert your png files you'll want to run the cwebp executable. The [docs](https://developers.google.com/speed/webp/docs/cwebp) tell you eveything you need to know.
+
 Here's a Windows batch script I wrote to easily convert the entire project to webp. Just replace the two comments with your path structure.
 
 
