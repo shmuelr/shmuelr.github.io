@@ -17,7 +17,6 @@ I had read a while back about [Google's webp](https://developers.google.com/spee
 </blockquote>
 
 
-
 #### But what about compatibity? 
 Webp is natively compatible with Android 4.0 and higher. This makes it the perfect solution for most modern projects.
 
@@ -29,8 +28,17 @@ On Windows you can install [this codec](https://developers.google.com/speed/webp
 First you need to download the compiled binaries from [here](https://developers.google.com/speed/webp/docs/precompiled).
 To convert your png files you'll want to run the cwebp executable. The [docs](https://developers.google.com/speed/webp/docs/cwebp) tell you eveything you need to know.
 
-Here's a Windows batch script I wrote to easily convert the entire project to webp. Just replace the two comments with your path structure.
 
+#### Warning!
+
+The Google Play store does not allow an apk to use .webp for the app icon. In in the Mac Bash script below I've set it to skip mipmap directories because that is where my app icons are. The Windows batch script does not check for this.
+
+Also, these scripts will overwrite your png file. Make sure to back them up!
+
+
+#### Scripts
+
+Here's a bash script I wrote to easily convert the entire project to webp. Just replace the two comments with your path structure.
 
 {% highlight batch lineanchors %}
 
@@ -38,6 +46,9 @@ Here's a Windows batch script I wrote to easily convert the entire project to we
 setlocal enableextensions enabledelayedexpansion
 echo Converting to webp
 echo script by Shmuel Rosansky
+
+echo Warning, this will convert app icons also!
+
 echo Listing all png files..
 SET /A COUNT=0
 
@@ -58,13 +69,26 @@ echo File # !COUNT!
 echo ----
 
  )
-
- 
  endlocal
-
 {% endhighlight %}
 
-Copy this to notepad and save it as a .bat file to run.
+
+If you perfer Mac here's a bash script.
+
+{% highlight bash lineanchors %}
+find ./ -type f -name "*.png" |while read line
+do  
+
+if [[ $line == *"mipmap"* ]]
+then
+  continue
+fi
+  	./cwebp $line -o $line -q 80 -alpha_cleanup -alpha_filter best -m 6 -mt -af -short || { echo 'Convert to webp failed' ; exit 1; }
+  	mv "$line" "${line%.png}.webp"
+done
+{% endhighlight %}
+
+
 
 You can change the quality level by raising or lowering 80. I found no visible loss of image quality at 80. Remember, your users will be on small phone screens and will not be able to analyze every pixel like you can on your desktop.
 
