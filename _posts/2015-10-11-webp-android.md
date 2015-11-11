@@ -88,6 +88,7 @@ fi
 done
 {% endhighlight %}
 
+[Github Gist](https://gist.github.com/shmuelr/ef9862f874376997ff5f)
 
 
 You can change the quality level by raising or lowering 80. I found no visible loss of image quality at 80. Remember, your users will be on small phone screens and will not be able to analyze every pixel like you can on your desktop.
