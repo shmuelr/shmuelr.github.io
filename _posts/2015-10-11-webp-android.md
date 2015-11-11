@@ -71,6 +71,7 @@ echo ----
  )
  endlocal
 {% endhighlight %}
+[Github Gist](https://gist.github.com/shmuelr/6d6a99ba38b7bc706aa3)
 
 
 If you perfer Mac here's a bash script.
@@ -87,7 +88,6 @@ fi
   	mv "$line" "${line%.png}.webp"
 done
 {% endhighlight %}
-
 [Github Gist](https://gist.github.com/shmuelr/ef9862f874376997ff5f)
 
 
