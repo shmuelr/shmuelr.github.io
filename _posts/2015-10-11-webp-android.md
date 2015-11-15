@@ -38,7 +38,7 @@ Also, these scripts will overwrite your png file. Make sure to back them up!
 
 #### Scripts
 
-Here's a bash script I wrote to easily convert the entire project to webp. Just replace the two comments with your path structure.
+Here's a Windows batch script I wrote to easily convert the entire project to webp. Just replace the two comments with your path structure.
 
 {% highlight batch lineanchors %}
 
@@ -60,7 +60,7 @@ echo %%g
 echo Old Size
 echo   %%~zg
 
-[path to webp.exe]\webp.exe %%g -o %%g -q 80 -alpha_cleanup -alpha_filter best -m 6 -mt -af -short
+[path to webp.exe]\cwebp.exe %%g -o %%g -q 80 -alpha_cleanup -alpha_filter best -m 6 -mt -af -short
 
 ren %%g *.webp
 
@@ -71,7 +71,6 @@ echo ----
  )
  endlocal
 {% endhighlight %}
-[Github Gist](https://gist.github.com/shmuelr/6d6a99ba38b7bc706aa3)
 
 
 If you perfer Mac here's a bash script.
@@ -88,11 +87,6 @@ fi
   	mv "$line" "${line%.png}.webp"
 done
 {% endhighlight %}
-<<<<<<< HEAD
-[Github Gist](https://gist.github.com/shmuelr/ef9862f874376997ff5f)
-=======
-
->>>>>>> parent of ea68109... Added Github Gist
 
 
 You can change the quality level by raising or lowering 80. I found no visible loss of image quality at 80. Remember, your users will be on small phone screens and will not be able to analyze every pixel like you can on your desktop.
