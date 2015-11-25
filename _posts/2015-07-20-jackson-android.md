@@ -9,6 +9,7 @@ categories: Jackson Android
 Json (or javascript object notiation) is a great way to transfer data over the web or persist data to disk. It is not the only way, but it is by far the most popular due to its clear-text format and ease of use. Developers love that you can read json and understand what it represents. Contrast this to a binary protocol (such as Google's Protobuf library) which is faster and has a smaller data size, but cannot be read by humans. Readablity is the major reason why Json became the defacto standard for public api communication.
 
 There are a couple of ways to work with json on Android. You can use the standard Java/Android libraries, Google's GSON library, or FasterXML's Jackson library. There are [discussions online](https://www.reddit.com/r/java/comments/340m5q/best_java_json_parser_gson_or_jackson) which is the best to use and the generally accepted answer is Jackson. The native libraries are slow and cumbersome. GSON is the next best choice. It is really simple to use and a lot faster than the native libs. Jackson is (usally) the fastest one. But Jackson can be a bit confusing to setup.
+
 (Edit - Nov 2015 - Turns out that on Android GSON is faster for small Json strings. This is because Jackson has a longer initialization time. With larger Json strings the longer initialization time is made up by the faster proccessing time. But for shorter Json strings GSON is faster because it initializes faster.)
 
 ####First, an overview of how Jackson works.
