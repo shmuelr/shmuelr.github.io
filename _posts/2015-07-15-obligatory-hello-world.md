@@ -2,7 +2,7 @@
 layout:     post
 title:      Obligatory Hello World
 date:       2015-07-15 12:31:19
-summary:    Hello World, how's it hanging?
+summary:    Hello World, how are you doing?
 categories: random
 ---
 
